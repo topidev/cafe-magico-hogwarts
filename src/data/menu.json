@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bertie Bott’s Every Flavour Beans",
+    "precio": 3.50,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Gominolas de todos los sabores… incluso de oreja, vómito o jabón."
+  },
+  {
+    "id": 2,
+    "nombre": "Chocolate Frogs",
+    "precio": 4.00,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Ranitas de chocolate que saltan y vienen con una tarjeta de mago famoso."
+  },
+  {
+    "id": 3,
+    "nombre": "Cauldron Cakes",
+    "precio": 2.75,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Pasteles en forma de caldero, muy populares en el Expreso de Hogwarts."
+  },
+  {
+    "id": 4,
+    "nombre": "Pumpkin Pasties",
+    "precio": 2.50,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Empanadillas rellenas de calabaza, también del carrito del tren."
+  },
+  {
+    "id": 9,
+    "nombre": "Jelly Slugs",
+    "precio": 2.25,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Gusanos de gelatina, muy populares en Honeydukes."
+  },
+  {
+    "id": 10,
+    "nombre": "Peppermint Toads",
+    "precio": 2.00,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Caramelos de menta en forma de sapo que “brincan” en la boca."
+  },
+  {
+    "id": 11,
+    "nombre": "Ton-Tongue Toffee",
+    "precio": 2.50,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Toffe que hace que la lengua se te agrande descomunalmente."
+  },
+  {
+    "id": 12,
+    "nombre": "Puking Pastilles",
+    "precio": 3.00,
+    "imagen": "",
+    "categoria": "Dulces Mágicos",
+    "descripcion": "Dulces que provocan vómito (para escapar de clases aburridas)."
+  },
+  {
+    "id": 15,
+    "nombre": "Butterbeer",
+    "precio": 5.00,
+    "imagen": "",
+    "categoria": "Bebidas Mágicas",
+    "descripcion": "Bebida favorita de los magos, con sabor a mantequilla y caramelo."
+  },
+  {
+    "id": 16,
+    "nombre": "Firewhisky",
+    "precio": 8.50,
+    "imagen": "",
+    "categoria": "Bebidas Mágicas",
+    "descripcion": "Licor alcohólico muy fuerte, prohibido para estudiantes."
+  },
+  {
+    "id": 22,
+    "nombre": "Ice Mice",
+    "precio": 2.50,
+    "imagen": "",
+    "categoria": "Postres y Snacks Mágicos",
+    "descripcion": "Dulces que hacen que los dientes castañeen y chillen."
+  },
+  {
+    "id": 23,
+    "nombre": "Freshwater Plimpies",
+    "precio": 6.00,
+    "imagen": "",
+    "categoria": "Comidas Saladas o Curiosas",
+    "descripcion": "Pez con patas, considerado una exquisitez por los Lovegood."
+  }
+]
