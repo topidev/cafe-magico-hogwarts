@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import menu from '../data/menu.json';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/hooks/useTheme';
 import Layout from '../components/Layout';
 
 const MenuPage: React.FC = () => {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/hooks/useTheme';
+import type { Casa } from '../types';
 
 const SelectorCasa: React.FC = () => {
     const { casaActual, cambiarCasa } = useTheme()
@@ -29,7 +30,7 @@ const SelectorCasa: React.FC = () => {
                         <button
                             key={casa.id}
                             onClick={() => {
-                            cambiarCasa(casa.id as any);
+                            cambiarCasa(casa.id as Casa);
                             setOpen(false);
                             }}
                             className={`w-full py-2 rounded flex items-center px-2 ${

@@ -1,6 +1,6 @@
 // src/components/Layout.tsx
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/hooks/useTheme';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { casaActual } = useTheme();
