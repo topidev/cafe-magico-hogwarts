@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import menu from '../data/menu.json';
-import { useComanda } from '../context/ComandaContext';
+import { useComanda } from '../context/hooks/useComanda';
 
 const OrdenarPage: React.FC = () => {
   const { comandaActual, agregarAComanda, finalizarComanda, cancelarComanda } = useComanda();

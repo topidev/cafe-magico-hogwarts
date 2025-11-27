@@ -1,7 +1,7 @@
 // src/pages/CocinaPage.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useComanda } from '../context/ComandaContext';
+import { useComanda } from '../context/hooks/useComanda';
 
 const CocinaPage: React.FC = () => {
   const { comandaActual, comandasFinalizadas, limpiarComandasFinalizadas } = useComanda();

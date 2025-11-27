@@ -33,8 +33,8 @@ module.exports = {
     'border-gryffindor-200', 'border-silver-200', 'border-bronze-200', 'border-black-200',
 
     // ===== BORDES =====
-    'border-scarlet-500', 'border-slytherin-500', 'border-ravenclaw-500', 'border-hufflepuff-500',
-    'border-gryffindor-200', 'border-slytherin-200', 'border-ravenclaw-200', 'border-hufflepuff-200',
+    'border-scarlet-500', 'border-slytherin-500', 'border-ravenclaw-500', 'border-hufflepuff-500', 'border-bronze-500', 'border-black-500', 'border-silver-500',
+    'border-gryffindor-200', 'border-slytherin-00', 'border-ravenclaw-200', 'border-hufflepuff-200',
     'ring-scarlet-500', 'ring-slytherin-500', 'ring-ravenclaw-500', 'ring-hufflepuff-500',
 
     // ===== FONDOS DE ICONOS / BADGES =====
@@ -90,11 +90,11 @@ module.exports = {
         ravenclaw: {
           50: '#f0f6fc',
           100: '#d1e3f3',
-          200: '#a7cdec',
+          200: '#3060db',
           300: '#78b0e0',
           400: '#4a92d4',
-          500: '#2a75c3',
-          600: '#1f5a99',
+          500: '#072778',
+          600: '#213264',
           700: '#174473',
           800: '#113354',
           900: '#0b2237',

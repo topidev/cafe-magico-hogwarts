@@ -3,7 +3,7 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { ComandaProvider } from './context/ComandaContext';
+import { ComandaProvider } from './context/ComandaProvider';
 import { ThemeProvider } from './context/ThemeProvider';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
