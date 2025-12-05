@@ -17,31 +17,29 @@ const SelectorCasa: React.FC = () => {
         <div className='fixed top-4 right-4 z-50'>
             <button
                 onClick={()=> setOpen(!open)}
-                className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition"
+                className="w-12 h-12 ml-auto rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition"
                 title="Cambiar casa"
             >
                 🏰
             </button>
             {open && (
                 <div className="mt-2 bg-white rounded-lg shadow-xl p-3 w-48">
-                    <h3 className="font-hogwarts text-center mb-2">Selecciona tu casa</h3>
+                    <h3 className="font-hogwarts text-gray-900 text-center mb-2">Selecciona tu casa</h3>
                     <div className="space-y-2">
                         {casas.map(casa => (
-                        <button
-                            key={casa.id}
-                            onClick={() => {
-                            cambiarCasa(casa.id as Casa);
-                            setOpen(false);
-                            }}
-                            className={`w-full py-2 rounded flex items-center px-2 ${
-                            casaActual === casa.id
-                                ? 'ring-2 ring-offset-2 ' + casa.color.replace('bg-', 'ring-')
-                                : 'hover:bg-gray-600'
-                            }`}
-                        >
-                            <span className={`w-4 h-4 rounded-full ${casa.color} mr-2`}></span>
-                            {casa.nombre}
-                        </button>
+                            <button
+                                key={casa.id}
+                                onClick={() => {
+                                    cambiarCasa(casa.id as Casa);
+                                    setOpen(false);
+                                }}
+                                className={`w-full py-2 rounded flex items-center px-2 ${
+                                    casaActual === casa.id ? 'ring-2 ring-offset-2 ' + casa.color.replace('bg-', 'ring-') : 'hover:bg-gray-600'
+                                }`}
+                            >
+                                <span className={`w-4 h-4 rounded-full ${casa.color} mr-2`}></span>
+                                {casa.nombre}
+                            </button>
                         ))}
                     </div>
                 </div>

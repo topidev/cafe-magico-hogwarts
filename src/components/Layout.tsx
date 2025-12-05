@@ -16,7 +16,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   return (
-    <div className={`min-h-screen w-full ${getBgClass()} p-4 md:p-6`}>
+    <div className={`min-h-screen w-full pb-40 pt-10 ${getBgClass()} p-4 md:p-6`}>
       {children}
     </div>
   );
