@@ -9,15 +9,13 @@ const MenuPage: React.FC = () => {
   const navigate = useNavigate();
   const { casaActual } = useTheme();
 
-  // Agrupar productos por categoría
-  const categorias = Array.from(
-    new Map(menu.map(item => [item.categoria, null])).keys()
-  );
-  const productosPorCategoria = categorias.reduce((acc, cat) => {
-    acc[cat] = menu.filter(item => item.categoria === cat);
-    return acc;
-  }, {} as Record<string, typeof menu>);
+  const productsByCategory: Record<string, typeof menu> = {}
 
+  menu.forEach(item => {
+    if(!productsByCategory[item.categoria])  productsByCategory[item.categoria] = []
+    productsByCategory[item.categoria].push(item)
+  })
+  
   // Colores por casa
   const getPrimaryColor = () => {
     switch (casaActual) {
@@ -60,7 +58,7 @@ const MenuPage: React.FC = () => {
 
       {/* Menú por categorías */}
       <div className="max-w-3xl mx-auto space-y-8">
-        {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
+        {Object.entries(productsByCategory).map(([categoria, productos]) => (
           <div
             key={categoria}
             className={`bg-white bg-opacity-80 backdrop-blur-sm rounded-xl border-2 border-${secondary}-500 shadow-lg p-5`}
