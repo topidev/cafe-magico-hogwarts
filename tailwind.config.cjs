@@ -28,7 +28,7 @@ module.exports = {
     'bg-hufflepuff-50', 'bg-hufflepuff-100', 'bg-hufflepuff-200',
 
     // ===== COLORES SECUNDARIOS (dorado, plata, bronce, negro) =====
-    'text-gryffindor-500','text-gryffindor-600', 'text-silver-400', 'text-bronze-500', 'text-black-500',
+    'text-gryffindor-500','text-gryffindor-600', 'text-silver-400', 'text-bronze-500', 'text-black-500', 'text-bronze-800',
     'bg-gryffindor-500', 'bg-silver-400', 'bg-bronze-500', 'bg-black-500',
     'border-gryffindor-200', 'border-silver-200', 'border-bronze-200', 'border-black-200',
 
