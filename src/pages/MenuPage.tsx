@@ -83,7 +83,7 @@ const MenuPage: React.FC = () => {
                     <p className={`text-sm text-${primary}-600 italic`}>{item.descripcion}</p>
                   </div>
                   <div className="flex items-center mt-2 md:mt-0">
-                    <span className={`px-2 py-1 bg-${primary}-500 text-${secondary}-500 font-bold rounded mr-2`}>
+                    <span className={`px-2 py-1 bg-${primary}-500 text-${secondary}-400 font-bold rounded mr-2`}>
                       {item.precio.toFixed(2)} G
                     </span>
                     {/* ✨ Botón AGREGAR */}

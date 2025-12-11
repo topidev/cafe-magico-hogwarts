@@ -18,8 +18,8 @@ module.exports = {
     'bg-slytherin-500', 'bg-slytherin-600',
     'bg-ravenclaw-500', 'bg-ravenclaw-600',
     'bg-hufflepuff-500', 'bg-hufflepuff-600',
-    'bg-silver-500', 'bg-silver-600', 'bg-bronze-600',
-    'bg-black-500',
+    'bg-silver-500', 'bg-silver-600', 'bg-bronze-600', 'bg-hufflepuff-400', 
+    'bg-black-500', 'bg-gryffindor-400', 'bg-slytherin-400', 'bg-ravenclaw-400', 
     
     // ===== FONDOS SECUNDARIOS (tarjetas, descripciones) =====
     'bg-gryffindor-50', 'bg-gryffindor-100', 'bg-gryffindor-200',
@@ -28,14 +28,14 @@ module.exports = {
     'bg-hufflepuff-50', 'bg-hufflepuff-100', 'bg-hufflepuff-200',
 
     // ===== COLORES SECUNDARIOS (dorado, plata, bronce, negro) =====
-    'text-bronze-100',
+    'text-bronze-100', 'text-black-400',
     'text-gryffindor-500','text-gryffindor-600', 'text-silver-400', 'text-bronze-500', 'text-silver-100','text-black-500', 'text-bronze-800', 'text-silver-50', 'text-silver-500', 'text-silver-700', 'text-scarlet-100', 
     'bg-gryffindor-500', 'bg-silver-400', 'bg-bronze-500', 'bg-black-500',
     'border-gryffindor-200', 'border-silver-200', 'border-bronze-200', 'border-black-200',
 
     // ===== BORDES =====
-    'border-bronze-100',
-    'border-scarlet-500', 'border-scarlet-400', 'border-slytherin-500', 'border-ravenclaw-500', 'border-hufflepuff-500', 'border-bronze-500', 'border-black-500', 'border-silver-500',
+    'border-bronze-100', 'border-bronze-300', 'border-silver-300', 'border-black-300', 'border-scarlet-300', 
+    'border-scarlet-500', 'border-scarlet-400', 'border-silver-400', 'border-slytherin-500', 'border-black-400', 'border-ravenclaw-500', 'border-hufflepuff-500', 'border-bronze-500', 'border-black-500', 'border-silver-500', 'border-bronze-400',
     'border-gryffindor-200', 'border-slytherin-00', 'border-ravenclaw-200', 'border-hufflepuff-200',
     'ring-scarlet-500', 'ring-slytherin-500', 'ring-ravenclaw-500', 'ring-hufflepuff-500',
 
@@ -60,6 +60,7 @@ module.exports = {
         },
         scarlet: {
           100: '#f9e8d5',
+          400: '#bd8751',
           500: '#c57a30',
           600: '#a65e1f',
           700: '#7f471a',
@@ -104,6 +105,7 @@ module.exports = {
         },
         bronze: {
           100: '#c99057',
+          400: '#a16b37',
           500: '#cd7f32',
           600: '#b5651d',
         },
@@ -121,6 +123,7 @@ module.exports = {
           900: '#78350f',
         },
         black: {
+          400: '#2e2e2d',
           500: '#000000',
           600: '#111827',
         }
