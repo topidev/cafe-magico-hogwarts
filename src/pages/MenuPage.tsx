@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 const MenuPage: React.FC = () => {
   const navigate = useNavigate();
   const { casaActual } = useTheme();
-  const { comandaActual, agregarAComanda, finalizarComanda, cancelarComanda } = useComanda()
+  const { comandaActual, agregarAComanda, cancelarComanda } = useComanda()
 
   const productsByCategory: Record<string, typeof menu> = {}
 
@@ -63,7 +63,7 @@ const MenuPage: React.FC = () => {
       </div>
 
       {/* Menú por categorías */}
-      <div className={` max-w-3xl mx-auto space-y-8 ${comandaActual.length > 0 ? 'pb-[200px] md:pb-[300px]' : ''}`}>
+      <div className={` max-w-6xl mx-auto space-y-8 ${comandaActual.length > 0 ? 'pb-[200px] md:pb-[300px]' : ''}`}>
         {Object.entries(productsByCategory).map(([categoria, productos]) => (
           <div
             key={categoria}
@@ -142,10 +142,10 @@ const MenuPage: React.FC = () => {
 
             <div className="mt-3 flex gap-2">
               <button
-                onClick={finalizarComanda}
+                onClick={() => navigate('/cocina')}
                 className={`flex-1 py-2 bg-${primary}-500 hover:bg-${primary}-600 text-white font-hogwarts rounded shadow transition`}
               >
-                🧑‍🍳 Enviar a cocina
+                Ir a cocina
               </button>
             </div>
           </div>
@@ -153,18 +153,13 @@ const MenuPage: React.FC = () => {
       )}
 
       {/* Botones fijos en la parte inferior */}
-      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-3">
-        <button
-          onClick={() => navigate('/ordenar')}
-          className={`px-6 py-3 bg-${primary}-500 hover:bg-${primary}-600 text-white font-hogwarts rounded-full shadow-lg border-2 border-${secondary}-500 transition transform hover:scale-105`}
-        >
-          🧑‍🍳 Ordenar (Mesero)
-        </button>
+      <div className="floating-buttons fixed z-10 top-20 right-6 flex lg:right-[20px] xl:right-[65px] 2xl:right-[200px]">
         <button
           onClick={() => navigate('/cocina')}
-          className={`px-6 py-3 bg-${secondary}-500 hover:bg-${secondary}-600 text-white font-hogwarts rounded-full shadow-lg border-2 border-${primary}-500 transition transform hover:scale-105`}
+          className={`flex justify-center items-center w-12 h-12 bg-${secondary}-500 hover:bg-${secondary}-600 text-white font-hogwarts rounded-full shadow-lg border-2 border-${primary}-500 transition transform hover:scale-105`}
+			 title='Ir a Cocina'
         >
-          👨‍🍳 Cocina
+          👨‍🍳
         </button>
       </div>
     </Layout>

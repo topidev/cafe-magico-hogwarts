@@ -14,10 +14,10 @@ const SelectorCasa: React.FC = () => {
     ]
 
     return (
-        <div className='fixed top-4 right-4 z-50'>
+        <div className='fixed top-4 right-6 z-50 lg:right-[20px] xl:right-[65px] 2xl:right-[200px]'>
             <button
                 onClick={()=> setOpen(!open)}
-                className="w-12 h-12 ml-auto rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition"
+                className="floating-buttons w-12 h-12 ml-auto rounded-full bg-black text-white flex items-center justify-center shadow-l hover:scale-105 transition"
                 title="Cambiar casa"
             >
                 🏰

@@ -3,64 +3,109 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useComanda } from '../context/hooks/useComanda';
 import Layout from '../components/Layout';
+import { useTheme } from '../context/hooks/useTheme';
 
 const CocinaPage: React.FC = () => {
-  const { comandaActual, comandasFinalizadas, limpiarComandasFinalizadas } = useComanda();
+  const { comandaActual, comandasFinalizadas, finalizarComanda, limpiarComandasFinalizadas } = useComanda();
+  const { casaActual } = useTheme()
   const navigate = useNavigate();
+
+    // Colores por casa
+  const getPrimaryColor = () => {
+    switch (casaActual) {
+      case 'gryffindor': return 'gryffindor';
+      case 'slytherin': return 'slytherin';
+      case 'ravenclaw': return 'ravenclaw';
+      case 'hufflepuff': return 'hufflepuff';
+      default: return 'ravenclaw';
+    }
+  };
+
+  const getSecondaryColor = () => {
+    switch (casaActual) {
+      case 'gryffindor': return 'scarlet';
+      case 'slytherin': return 'silver';
+      case 'ravenclaw': return 'bronze';
+      case 'hufflepuff': return 'black';
+      default: return 'bronze';
+    }
+  };
+
+
+  const primary = getPrimaryColor()
+  const secondary = getSecondaryColor()
 
   return (
     <Layout>
-      <h1 className="text-2xl text-gray-900 font-bold mb-4">👨‍🍳 Cocina</h1>
 
-      <button
-        onClick={() => navigate('/menu')}
-        className="mb-6 text-blue-600"
-      >
-        ← Volver al menú
-      </button>
+		{/* Botón para volver al menú */}
+		<div className="floating-buttons fixed z-10 top-20 right-6 flex lg:right-[20px] xl:right-[65px] 2xl:right-[200px]">
+			<button
+			onClick={() => navigate('/menu')}
+			title='Ver Menú'
+			className={`flex justify-center items-center w-12 h-12 bg-${secondary}-500 hover:bg-${secondary}-600 text-white font-hogwarts rounded-full shadow-lg border-2 border-${primary}-500 transition transform hover:scale-105`}
+			>
+			📖
+			</button>
+		</div>
 
-      {/* Comanda en curso */}
-      <div className="text-gray-900 mb-8">
-        <h2 className="text-xl font-semibold mb-2">Comanda en curso</h2>
-        {comandaActual.length === 0 ? (
-          <p>No hay comanda activa</p>
-        ) : (
-          <div className="border p-4 rounded bg-yellow-50">
-            {comandaActual.map(item => (
-              <div className='text-gray-900' key={item.id}>
-                {item.nombre} ×{item.cantidad}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+		{/* Ordenes/Comandas */}
+		<div className={` max-w-6xl mx-auto space-y-8`}>
+      	<h1 className={`text-2xl text-${primary}-800 font-bold mb-4`}>👨‍🍳 Cocina</h1>
 
-      {/* Comandas finalizadas */}
-      <div className='text-gray-900'>
-        <h2 className="text-xl font-semibold mb-2">Comandas finalizadas (FIFO)</h2>
-        {comandasFinalizadas.length === 0 ? (
-          <p>No hay comandas finalizadas</p>
-        ) : (
-          <div className="space-y-4">
-            {comandasFinalizadas.map((comanda, index) => (
-              <div key={index} className="border p-4 rounded">
-                <h3 className="text-gray-900 font-bold">Comanda #{index + 1}</h3>
-                {comanda.map(item => (
-                  <div className='text-gray-900' key={`${index}-${item.id}`}>
-                    {item.nombre} ×{item.cantidad}
-                  </div>
-                ))}
-              </div>
-            ))}
-            <button
-              onClick={limpiarComandasFinalizadas}
-              className="mt-4 text-red-500"
-            >
-              Limpiar historial
-            </button>
-          </div>
-        )}
-      </div>
+      	{/* Comanda en curso */}
+			<div className="text-gray-900 mb-8">
+			<h2 className="text-xl font-semibold mb-2">Comanda en curso</h2>
+			{comandaActual.length === 0 ? (
+				<p>No hay comanda activa</p>
+			) : (
+				/* Pizarron */
+				<div className='board-border'>
+					<div className={`border-orange-300 border-[10px] border-board p-6 bg-${primary}-500`}>
+						{comandaActual.map(item => (
+						<div className={`text-${secondary}-100 mb-2`} key={item.id}>
+							{item.nombre} ×{item.cantidad}
+						</div>
+						))}
+						<br />
+						<button
+							onClick={() => finalizarComanda()}
+							className={`text-${secondary}-100 border-2 bg-${primary}-500 border-${secondary}-500`}
+						>
+							Finalizar ✔
+						</button>
+					</div>
+				</div>
+			)}
+			</div>
+
+			{/* Comandas finalizadas */}
+			<div className='text-gray-900'>
+				<h2 className="text-xl font-semibold mb-2">Comandas finalizadas</h2>
+				{comandasFinalizadas.length === 0 ? (
+					<p>No hay comandas finalizadas</p>
+				) : (
+					<div className="space-y-4">
+						{comandasFinalizadas.map((comanda, index) => (
+						<div key={index} className="border p-4 rounded">
+							<h3 className="text-gray-900 font-bold">Comanda #{index + 1}</h3>
+							{comanda.map(item => (
+								<div className='text-gray-900' key={`${index}-${item.id}`}>
+								{item.nombre} ×{item.cantidad}
+								</div>
+							))}
+						</div>
+						))}
+						<button
+						onClick={limpiarComandasFinalizadas}
+						className="mt-4 text-red-500"
+						>
+						Limpiar historial
+						</button>
+					</div>
+				)}
+			</div>
+		</div>
     </Layout>
   );
 };
